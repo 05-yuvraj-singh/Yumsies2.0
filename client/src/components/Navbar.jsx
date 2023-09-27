@@ -1,6 +1,6 @@
-// Navbar.js
 import React from "react";
-import { Box, Flex, Button } from "@chakra-ui/react";
+import { Box, Flex, Button, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom"; // Import the router Link component
 
 function Navbar() {
   return (
@@ -15,13 +15,16 @@ function Navbar() {
         {/* Your logo or site title can go here */}
         <strong>Yumsies</strong>
       </Box>
-      <Button
-        bg="#9900ff"
-        color="white"
-        _hover={{ bg: "#7a00cc" }} // Optional hover color
-      >
-        Login
-      </Button>
+      {/* Wrap the Button with RouterLink */}
+      <Link as={RouterLink} to="/sign-in">
+        <Button
+          bg="#9900ff"
+          color="white"
+          _hover={{ bg: "#7a00cc" }} // Optional hover color
+        >
+          Login
+        </Button>
+      </Link>
     </Flex>
   );
 }

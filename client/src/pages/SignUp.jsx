@@ -11,15 +11,35 @@ import {
 } from '@chakra-ui/react';
 
 const SignUp = () => {
+  const [name,setName] = useState('')
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-  };
+    
+      try {
+        const response = await fetch("http://localhost:5000/api/users/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({'name':name , 'email':email , 'username':username,'password':password}),
+        });
+  
+        if (response.ok) {
+          console.log("Signup successful");
+        } else {
+          // Handle signup error, e.g., show an error message
+          console.error("Signup failed");
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    };
+  
 
   return (
     <Box
@@ -39,6 +59,14 @@ const SignUp = () => {
       >
         <form onSubmit={handleSubmit}>
           <VStack spacing={6}>
+          <FormControl>
+              <Input marginTop="1rem" color="white"
+                type="name"
+                placeholder="Enter your name*"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </FormControl>
             <FormControl>
               <Input marginTop="1rem" color="white"
                 type="email"

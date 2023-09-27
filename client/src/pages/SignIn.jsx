@@ -11,12 +11,25 @@ import {
 } from '@chakra-ui/react';
 import Logo from '../components/Logo'; // Import your Logo component
 
-const SignUp = () => {
+const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/api/users/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({'username':username,'password':password}),
+      })
+      localStorage.setItem("token" , await response.json())
+
+      } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
@@ -79,4 +92,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
