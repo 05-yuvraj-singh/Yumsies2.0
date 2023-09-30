@@ -15,10 +15,14 @@ function HomeCenter3() {
         Ready to get started?
       </Text>
       <Link as={RouterLink} to="/sign-up">
-
-      <Button colorScheme="blue" size="lg">
-        Signup
-      </Button>
+      <Button
+          mt={4}
+          bg="#9900ff"
+          color="white"
+          _hover={{ bg: "blue" }} // Optional hover color
+        >
+          SignUp
+        </Button>
       </Link>
     </Box>
   )

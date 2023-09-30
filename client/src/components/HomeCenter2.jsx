@@ -10,10 +10,11 @@ function HomeCenter2() {
       alignItems="center"
       justifyContent="center"
       height="60vh"
-      marginTop="10rem"
+      marginTop="18rem"
       fontFamily="'Martian Mono', monospace, 'Mooli', sans-serif, 'Roboto', sans-serif"
+      bg="#ffffcc"
     >
-      <Text fontSize="lg">
+      <Text fontSize="xl" marginLeft={4}>
         Embark on a delightful culinary journey with our platform, where food lovers unite to share, explore, and savor diverse recipes. Yumsies brings together a vibrant community of chefs and food enthusiasts, allowing you to share, explore, and savor mouthwatering dishes from around the globe. Key features include : 
       </Text>
       <UnorderedList listStyleType="none" ml={0} mt={4} fontSize="md" className="left-aligned-list">

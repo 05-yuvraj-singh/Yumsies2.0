@@ -1,11 +1,19 @@
-import React from 'react'
-
-function Recipies() {
+import React from 'react';
+import { Box } from '@chakra-ui/react';
+import RecipeCard from '../components/RecipieCard';
+import NavbarLogIn from '../components/NavbarLogIn';
+function Recipes() {
   return (
     <>
-        <p>THIS IS A RECIPIE PAGE</p> 
+      <NavbarLogIn/>
+      <RecipeCard />
+      <RecipeCard />
+      <RecipeCard />
+      <RecipeCard />
+      <RecipeCard />
     </>
-  )
+    
+  );
 }
 
-export default Recipies
+export default Recipes;
