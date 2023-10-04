@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import Recipies from './pages/Recipies';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-// import NotFound from './components/NotFound';
+import ContactUs from './components/Contactus';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Route path="/sign-in" element={<SignIn/>} />
         <Route path="/sign-up" element={<SignUp/>} />
         <Route path="/recipie" element={<Recipies/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="*" element={<NotFound/>}/>
+
       </Routes>
       
     </Router>
