@@ -21,10 +21,10 @@ function Footer() {
       <Link href="/about" style={linkStyles}>
         About Us
       </Link>
-      <Link href="" style={linkStyles}>
+      <Link href="/contact" style={linkStyles}>
         Contact Us
       </Link>
-      <Link href="" style={linkStyles}>
+      <Link href="https://github.com/05-yuvraj-singh/Yumsies2.0" style={linkStyles}>
         View Code
       </Link>
       <Text style={{ color: "white", margin: "0 10px" }}>
