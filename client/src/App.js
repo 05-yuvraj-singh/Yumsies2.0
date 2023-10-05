@@ -4,11 +4,11 @@ import Home from './pages/Home';
 import Recipies from './pages/Recipies';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import ContactUs from './components/Contactus';
-import NotFound from './components/NotFound';
-import Profile from './components/Profile';
-import Search from './components/Search';
-import FindUsers from './components/FindUsers';
+import ContactUs from './pages/Contactus';
+import NotFound from './pages/NotFound';
+import Profile from './pages/Profile';
+import Search from './pages/Search';
+import FindUsers from './pages/FindUsers';
 
 function App() {
   return (
