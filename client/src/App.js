@@ -8,6 +8,7 @@ import ContactUs from './components/Contactus';
 import NotFound from './components/NotFound';
 import Profile from './components/Profile';
 import Search from './components/Search';
+import FindUsers from './components/FindUsers';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp/>} />
         <Route path="/recipie" element={<Recipies/>}/>
         <Route path="/contact-us" element={<ContactUs/>}/>
-        
+        <Route path="/find-users" element={<FindUsers/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="*" element={<NotFound/>}/>

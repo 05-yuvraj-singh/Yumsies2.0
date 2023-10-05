@@ -50,7 +50,24 @@ function NavbarLogIn() {
         >
 Profile
         </Button>
+
+
         </Link>
+
+      
+<Link as={RouterLink} to="/find-users">
+
+<Button
+  bg="#9900ff"
+  color="white"
+  _hover={{ bg: "blue" }} 
+  marginRight={12}
+>
+Find Users
+</Button>
+
+
+</Link>
       </Link>
     </Flex>
   );
