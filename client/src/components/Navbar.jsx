@@ -12,7 +12,6 @@ function Navbar() {
       alignItems="center"
     >
       <Box>
-        {/* Your logo or site title can go here */}
         <strong>Yumsies</strong>
       </Box>
       {/* Wrap the Button with RouterLink */}
