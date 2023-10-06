@@ -8,6 +8,7 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react';
+import RecipeCard from '../components/RecipieCard';
 
 function Search() {
   const [searchText, setSearchText] = useState('');
@@ -16,19 +17,20 @@ function Search() {
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
   };
-
+  
   useEffect(() => {
-    const API_ENDPOINT = `/api/recipes?search=${searchText}`;
-
+    const API_ENDPOINT = `http://localhost:5000/api/recipies/search-recepie?term=${searchText}`;  
+    
     fetch(API_ENDPOINT)
-      .then((response) => response.json())
-      .then((data) => {
-        setRecipes(data.recipes);
-      })
-      .catch((error) => {
-        console.error('Error fetching recipes:', error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      setRecipes(data)
+    })
+    .catch((error) => {
+      console.error('Error fetching recipes:', error);
+    });
   }, [searchText]);
+  
 
   return (
     <Box p={4}>
@@ -52,16 +54,22 @@ function Search() {
           </Text>
           <Grid templateColumns="repeat(2, 1fr)" gap={4}>
             {recipes.map((recipe, index) => (
-              <GridItem key={index}>
-                <Box borderWidth="1px" borderRadius="lg" p={4}>
-                  <Heading as="h3" size="md">
-                    {recipe.title}
-                  </Heading>
-                  <Text>{recipe.description}</Text>
-                </Box>
-              </GridItem>
+      
+
+              <RecipeCard
+            key={index}
+            title={recipe.title}
+            description={recipe.description}
+            ingredients={recipe.ingredients}
+            instructions={recipe.instructions}
+            imageUrl={recipe.imageUrl}
+            author={recipe.author}
+            likes={recipe.likes}
+            createdAt={recipe.createdAt}
+          />
             ))}
-          </Grid>
+          </Grid> 
+
         </Box>
       )}
     </Box>
