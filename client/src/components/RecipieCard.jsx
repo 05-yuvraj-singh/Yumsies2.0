@@ -9,7 +9,7 @@ function RecipeCard(recipe) {
   return (
     <Center>
       <Box fontFamily="'Martian Mono', monospace, 'Mooli', sans-serif, 'Roboto', sans-serif"
-       borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" width="600px" margin="2rem" bg="#ffe6b3">
+       borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" width="800px" margin="2rem" bg="#ffe6b3">
         <Center>
           <Text marginTop={5} fontWeight="bold">
             By <a href="#">{recipe.author}</a>

@@ -68,7 +68,7 @@ const SignUp = () => {
               />
             </FormControl>
             <FormControl>
-              <Input marginTop="1rem" color="white"
+              <Input  color="white"
                 type="email"
                 placeholder="Enter your email*"
                 value={email}
