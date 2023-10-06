@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Image, Heading, Text, VStack, Button, Center } from '@chakra-ui/react';
-// import { AiOutlineHeart, AiFillHeart } from '@chakra-ui/icons';
 
 
-const recipe = {
-  title: 'Delicious Chocolate Cake',
-  description: 'A rich and decadent chocolate cake recipe.',
-  ingredients: ['2 cups all-purpose flour', '1 cup sugar', '1/2 cup cocoa powder', /* ... */],
-  instructions: ['Preheat oven to 350°F (175°C).', 'In a bowl, whisk together flour, sugar, and cocoa powder.', /* ... */],
-  imageUrl: 'https://picsum.photos/300/300',
-  author: 'John Doe',
-  likes: 25,
-  createdAt: '2023-09-27T12:00:00.000Z',
-};
-function RecipeCard() {
+function RecipeCard(recipe) {
   const [showIngredients, setShowIngredients] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
   
@@ -28,7 +17,7 @@ function RecipeCard() {
         </Center>
         <Center>
 
-        <Image src={recipe.imageUrl} alt={recipe.title} marginTop={8}  width="400px" />
+        <Image src={recipe.imageUrl} alt={recipe.title} marginTop={8}  width="400px" height="400px" />
         </Center>
         <Box p="4" margin={6}>
           <Heading as="h2" fontSize="xl" fontWeight="semibold" mb="2">

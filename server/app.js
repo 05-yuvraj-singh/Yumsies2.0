@@ -24,6 +24,6 @@ dotenv.config({path:'./config/config.env'})
 app.use('/api/users' , userRoutes);
 
 // Recipie Routes 
-// app.use('/api/recipies', recipieRoutes);
+app.use('/api/recipies', recipieRoutes);
 
 module.exports = app;

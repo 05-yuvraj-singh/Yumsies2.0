@@ -45,6 +45,6 @@ const recipieSchema = new mongoose.Schema({
     description: 'text'
   });
 
-const recipie = mongoose.model("recipie" , recipieSchema);
+const recipie = mongoose.model("recepie" , recipieSchema);
 module.exports = recipie;
 
