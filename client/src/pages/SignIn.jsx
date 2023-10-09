@@ -47,7 +47,7 @@ const SignIn = () => {
         padding="2rem"
         borderRadius="8px"
         boxShadow="lg"
-        color="gray.500"
+        color="black"
         height="350px"
         width="450px"
         marginTop="2rem" // Add margin between the logo and the sign-up form

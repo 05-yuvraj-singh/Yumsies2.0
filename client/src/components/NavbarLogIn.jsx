@@ -28,6 +28,18 @@ function NavbarLogIn() {
         </Button>
     <Link/>
 
+<Link as={RouterLink} to="/new-recipie">
+
+<Button
+  bg="#9900ff"
+  color="white"
+  _hover={{ bg: "blue" }} 
+  marginRight={12}
+>
+  Post Recipie
+</Button>
+</Link>
+
     <Link as={RouterLink} to="/search">
 
         <Button
