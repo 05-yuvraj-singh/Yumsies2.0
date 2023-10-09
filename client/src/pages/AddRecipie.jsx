@@ -45,14 +45,12 @@ const RecipeAdd = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Create a recipe object with all data
       const recipeData = {
         ...formData,
         ingredients,
         instructions,
       };
 
-      // Make a POST request to your backend API to create a new recipe
       const response = await fetch('/api/recipes', {
         method: 'POST',
         headers: {
@@ -73,76 +71,96 @@ const RecipeAdd = () => {
   };
 
   return (
-    <Box>
-      <form onSubmit={handleSubmit}>
-        <FormControl>
-          <FormLabel>Title</FormLabel>
-          <Input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-          />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Description</FormLabel>
-          <Textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Image URL</FormLabel>
-          <Input
-            type="text"
-            name="imageUrl"
-            value={formData.imageUrl}
-            onChange={handleChange}
-          />
-        </FormControl>
-
-        <Stack direction="column" spacing={4}>
+    <Box
+       // Background color for the entire page
+      h="100vh"     // Set the height of the page to 100% viewport height
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box
+      bg="#ffe6b3" // Grayish background color for the content box
+        p="4"
+        borderRadius="md"
+        w="100%"       // Adjust the width of the content box
+        maxW="600px"   // Set a maximum width for the content box
+      >
+        <form onSubmit={handleSubmit}>
           <FormControl>
-            <FormLabel>Ingredients</FormLabel>
-            {ingredients.map((ingredient, index) => (
-              <div key={index}>
-                <p>
-                  {index + 1}. {ingredient}
-                </p>
-              </div>
-            ))}
+            <FormLabel>Title</FormLabel>
             <Input
               type="text"
-              value={ingredientInput}
-              onChange={(e) => setIngredientInput(e.target.value)}
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
             />
-            <Button onClick={handleAddIngredient}>Add Ingredient</Button>
           </FormControl>
 
           <FormControl>
-            <FormLabel>Instructions</FormLabel>
-            {instructions.map((instruction, index) => (
-              <div key={index}>
-                <p>
-                  {index + 1}. {instruction}
-                </p>
-              </div>
-            ))}
+            <FormLabel>Description</FormLabel>
             <Textarea
-              value={instructionInput}
-              onChange={(e) => setInstructionInput(e.target.value)}
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
             />
-            <Button onClick={handleAddInstruction}>Add Instruction</Button>
           </FormControl>
-        </Stack>
 
-        <Button type="submit" mt="4" colorScheme="blue">
-          Add Recipe
-        </Button>
-      </form>
+          <FormControl>
+            <FormLabel>Image URL</FormLabel>
+            <Input
+              type="text"
+              name="imageUrl"
+              value={formData.imageUrl}
+              onChange={handleChange}
+            />
+          </FormControl>
+
+          <Stack direction="column" spacing={4}>
+            <FormControl>
+              <FormLabel>Ingredients</FormLabel>
+              {ingredients.map((ingredient, index) => (
+                <div key={index}>
+                  <p>
+                    {index + 1}. {ingredient}
+                  </p>
+                </div>
+              ))}
+              <Input
+                type="text"
+                value={ingredientInput}
+                onChange={(e) => setIngredientInput(e.target.value)}
+              />
+              <Button onClick={handleAddIngredient}>Add Ingredient</Button>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>Instructions</FormLabel>
+              {instructions.map((instruction, index) => (
+                <div key={index}>
+                  <p>
+                    {index + 1}. {instruction}
+                  </p>
+                </div>
+              ))}
+              <Textarea
+                value={instructionInput}
+                onChange={(e) => setInstructionInput(e.target.value)}
+              />
+              <Button onClick={handleAddInstruction}>Add Instruction</Button>
+            </FormControl>
+          </Stack>
+<center>
+<Button
+  bg="#9900ff"
+  color="white"
+  _hover={{ bg: "blue" }} 
+>
+  Post Recipie
+</Button>
+
+</center>
+        </form>
+      </Box>
     </Box>
   );
 };
