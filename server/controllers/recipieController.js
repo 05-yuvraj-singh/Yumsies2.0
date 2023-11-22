@@ -24,19 +24,19 @@ const getRecipies = async (req, res) => {
 //   }
 // };
 
-// const postrecipie = async (req, res) => {
-//   try {
-//     const recipie = await recipie.create(req.body);
-//     const userdata = await User.findById(req.body.author);
-//     console.log(userdata)
-//     userdata.recipies.push(recipie.id); 
-//     await userdata.save(); 
-//     res.status(200).json(recipie);
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(500).json({ message: error.message });
-//   }
-// };
+const postrecipie = async (req, res) => {
+  try {
+    const recipie = await recipie.create(req.body);
+    const userdata = await User.findById(req.body.author);
+    console.log(userdata)
+    userdata.recipies.push(recipie.id); 
+    await userdata.save(); 
+    res.status(200).json(recipie);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
+};
 
 const searchrecipie = async (req, res) => {
   try {
@@ -54,4 +54,4 @@ const searchrecipie = async (req, res) => {
   }
 };
 
-module.exports = { getRecipies , searchrecipie };
+module.exports = { getRecipies , searchrecipie , postrecipie};

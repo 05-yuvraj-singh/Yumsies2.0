@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import Search from './pages/Search';
 import FindUsers from './pages/FindUsers';
 import AddRecipie from './pages/AddRecipie';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/search" element={<Search/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/new-recipie" element={<AddRecipie/>}/>
+        <Route path="/home" element={<LandingPage/>}/>
         <Route path="*" element={<NotFound/>}/>
 
       </Routes>

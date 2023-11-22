@@ -31,6 +31,8 @@ const SignUp = () => {
   
         if (response.ok) {
           console.log("Signup successful");
+          alert(`${name} Registered Successfully`)
+          window.location.href='/sign-in'
         } else {
           // Handle signup error, e.g., show an error message
           console.error("Signup failed");
@@ -42,13 +44,20 @@ const SignUp = () => {
   
 
   return (
+  
     <Box
-      backgroundColor="#ffffe6"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      minHeight="100vh"
-    >
+    backgroundColor="#ffffe6"
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    justifyContent="center"
+    minHeight="100vh"
+  >
+    <Text fontSize="2xl" fontWeight="bold" marginBottom="2rem">
+      SignUp 
+    </Text>
+
+
       <Box
         backgroundColor="#ffffcc"
         padding="2rem"
@@ -60,7 +69,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit}>
           <VStack spacing={6}>
           <FormControl>
-              <Input marginTop="1rem" color="white"
+              <Input marginTop="1rem" color="black"
                 type="name"
                 placeholder="Enter your name*"
                 value={name}
@@ -68,7 +77,7 @@ const SignUp = () => {
               />
             </FormControl>
             <FormControl>
-              <Input  color="white"
+              <Input  color="black"
                 type="email"
                 placeholder="Enter your email*"
                 value={email}
@@ -76,7 +85,7 @@ const SignUp = () => {
               />
             </FormControl>
             <FormControl>
-              <Input
+              <Input color="black"
                 type="text"
                 placeholder="Choose a username*"
                 value={username}
@@ -84,7 +93,7 @@ const SignUp = () => {
               />
             </FormControl>
             <FormControl>
-              <Input
+              <Input color="black"
                 type="password"
                 placeholder="Enter your password*"
                 value={password}
@@ -92,7 +101,7 @@ const SignUp = () => {
               />
             </FormControl>
             <FormControl>
-              <Input
+              <Input color="black"
                 type="password"
                 placeholder="Confirm your password*"
                 value={confirmPassword}

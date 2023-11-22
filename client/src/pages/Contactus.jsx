@@ -45,7 +45,7 @@ function ContactUs() {
 
       <Text mt={4}>
         Alternatively, you can also contact the developer directly at{' '}<br/>
-        <Link href="officialyuvrajsingh05@gmail.com">GMail</Link><br/>
+        <Link to="mailto:yuvrajsingh532004@gmail.com?subject=Yumsies%20-%20Contact%20Me&body=I%20wanted%20to%20convey%20that%20">GMail</Link><br/>
         <Link href="https://github.com/05-yuvraj-singh">GitHub</Link>
       </Text>
 

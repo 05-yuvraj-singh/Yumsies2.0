@@ -25,7 +25,11 @@ const SignIn = () => {
         },
         body: JSON.stringify({'username':username,'password':password}),
       })
-      localStorage.setItem("token" , await response.json())
+      // localStorage.setItem("token" , await response.json())
+      if(response.status==200){
+        alert(`${username} Logged IN Successfully`)
+          window.location.href='/home'
+      }
 
       } catch (error) {
       console.error("An error occurred:", error);
@@ -34,14 +38,17 @@ const SignIn = () => {
 
   return (
     <Box
-      backgroundColor="#ffffe6"
-      display="flex"
-      flexDirection="column" // Add this to stack logo and the sign-up form vertically
-      alignItems="center"
-      justifyContent="center"
-      minHeight="100vh"
-    >
-      <Logo /> {/* Render the Logo component here */}
+    backgroundColor="#ffffe6"
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    justifyContent="center"
+    minHeight="100vh"
+  >
+    <Text fontSize="4xl" fontWeight="bold" marginBottom="2rem">
+      SignIn
+    </Text>
+  {/* <Logo /> Render the Logo component here */}
       <Box
         backgroundColor="#ffffcc"
         padding="2rem"
@@ -83,7 +90,7 @@ const SignIn = () => {
         </form>
         <Text marginTop="2rem">
           New user?{' '}
-          <Link color="gray.450" fontSize="sm" marginLeft="0.5rem">
+          <Link to="/sign-up" color="gray.450" fontSize="sm" marginLeft="0.5rem">
             SignUp
           </Link>
         </Text>

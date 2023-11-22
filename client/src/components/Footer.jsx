@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </Box>
 
-        <Box style={boxStyles}>
+        {/* <Box style={boxStyles}>
           <div>
             <Link href="/about" style={linkStyles}>
               About Us
@@ -64,8 +64,9 @@ function Footer() {
             </Link>
           </div>
         </Box>
+*/}
       </Flex>
-    </Box>
+/    </Box> 
   );
 }
 
